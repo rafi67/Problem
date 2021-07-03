@@ -10,7 +10,7 @@ void pp() {
     double A, B, C;
     int i = 0;
     for(int i=0; i<T; i++) {
-        cin.ignore(1024, '\n');
+        if(i==0) cin.ignore(1024, '\n');
         getline(cin, Text);
         stringstream ss(Text);
         ss >> A >> B >> C;
