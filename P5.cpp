@@ -1,20 +1,19 @@
-#include <iostream>
-#include <string>
-#include <future>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 template<class T>
 class MyTemplate {
 
-    T a;
+    T a, b;
 
     public:
-        MyTemplate(T a) {
+        MyTemplate(T a, T b) {
             this->a = a;
+            this->b = b;
         }
 
-        T add(T b) {
+        T add() {
             return a+b;
         }
 
@@ -27,11 +26,12 @@ class MyTemplate<string>{
     
     public:
 
-        MyTemplate(string a) {
+        MyTemplate(string a, string b) {
             this->a = a;
+            this->b = b;
         }
 
-        string add(string b) {
+        string add() {
             return a+b;
         }
 
@@ -46,29 +46,30 @@ void Temp() {
         if(type == "string") {
             string s1, s2;
             cin >> s1 >> s2;
-            MyTemplate<string>s(s1);
-            cout << s.add(s2) << endl;
+            MyTemplate<string>s(s1, s2);
+            cout << s.add() << "\n";
         }
         else if(type == "int") {
             int num1, num2;
             cin >> num1 >> num2;
-            MyTemplate<int>t(num1);
-            printf("%d\n", t.add(num2));
+            MyTemplate<int>t(num1, num2);
+            cout << t.add() << "\n";
         }
         else {
             float f1, f2;
             cin >> f1 >> f2;
-            MyTemplate<float>f(f1);
-            cout << f.add(f2) << endl;
+            MyTemplate<float>f(f1, f2);
+            cout << f.add() << "\n";
         }
     }
 }
 
 int main(int argc, char *argv[]) {
 
-    async(launch::async, [] {
-        Temp();
-    });    
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
+    Temp();   
     
     return 0;
 
