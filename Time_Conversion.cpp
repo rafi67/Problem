@@ -9,7 +9,7 @@ int main() {
     int result1 = n/60;
     int result0 = result1/60;
     int result2 = n%60;
-    if(result1 > result0){
+    if(result1 > result0) {
         int result3 = result1%60;
         cout << result0 << ":" << result3 << ":" << result2 << "\n";
     }
