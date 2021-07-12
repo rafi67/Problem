@@ -6,14 +6,14 @@ int main() {
 
     int n;
     cin >> n;
-    int result1 = n/60;
-    int result0 = result1/60;
-    int result2 = n%60;
-    if(result1 > result0) {
-        int result3 = result1%60;
-        cout << result0 << ":" << result3 << ":" << result2 << "\n";
+    int minute = n/60;
+    int hour = minute/60;
+    int second = n%60;
+    if(minute > hour) {
+        int minute2 = minute%60;
+        cout << hour << ":" << minute2 << ":" << second << "\n";
     }
     else 
-        cout << "0:" << result1 << ":" << result2 << "\n";
+        cout << "0:" << minute << ":" << second << "\n";
 
 }
