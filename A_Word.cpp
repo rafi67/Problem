@@ -3,9 +3,9 @@
 void lower_case(char* ch, int size) {
     char temp;
     for(int i=0; i<size; i++) {
-        if(ch[i]>='A' && ch[i]<='Z') {
+        if(ch[i]>=65 && ch[i]<=90) {
             temp = ch[i];
-            ch[i] = 'a'+(temp-'A');
+            ch[i] = 97+(temp-65);
         }
     }
 }
@@ -13,9 +13,9 @@ void lower_case(char* ch, int size) {
 void upper_case(char* ch, int size) {
     char temp;
     for(int i=0; i<size; i++) {
-        if(ch[i]>='a' && ch[i]<='z') {
+        if(ch[i]>=97 && ch[i]<=122) {
             temp = ch[i];
-            ch[i] = 'A'+(temp-'a');
+            ch[i] = 65+(temp-97);
         }
     }
 }
@@ -33,9 +33,9 @@ int string_size(char ch[]) {
 
 void lowerandupper_counter(char ch[], int*l, int*u, int size) {
     for(int i=0; i<size; i++) {
-        if(ch[i]>='A' && ch[i]<='Z') (*u)++;
+        if(ch[i]>=65 && ch[i]<=90) (*u)++;
         
-        else if(ch[i]>='a' && ch[i]<='z') (*l)++;
+        else if(ch[i]>=97 && ch[i]<=122) (*l)++;
     }
 }
 
