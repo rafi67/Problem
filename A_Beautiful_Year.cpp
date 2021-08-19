@@ -10,7 +10,7 @@ int main() {
         ++n;
         string s = to_string(n);
         if(s[0]!=s[1] && s[0]!=s[2] && s[0]!=s[3] && s[1]!=s[2] && s[1]!=s[3]
-        && s[2]!=s[3]) b = 0;
+        && s[2]!=s[3]) break;
     }
 
     printf("%d\n", n);
