@@ -11,26 +11,13 @@ int main() {
 
     cin >> n >> a >> b;
 
-    int index = a;
-    if(n==1) index = 1;
-    else if(b>0) {
-        for(int i=0; i<b; i++) {
-            index++;
-            if(index>n) index = 1;
-        }
-    }
+    b = b%n;
+    
+    if(b<0) result = n+a+b;
+    else result = a+b;
 
-    else if(b<0) {
-        for(int i=0; i<abs(b); i++) {
-            index--;
-            if(index==0) index = n;
-            
-        }
-    }
-
-    result = index;
-
-    cout << result << "\n";
+    if(result%n==0) cout << n << "\n";
+    else cout << result%n << "\n";
 
     return 0;
     
