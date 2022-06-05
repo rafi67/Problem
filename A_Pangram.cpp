@@ -11,29 +11,25 @@ int main() {
 
     cin >> n >> s;
 
-    string s2 = "abcdefghijklmnopqrstuvwxyz";
-    string s3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
     int result = 0;
 
-    for(int i=0; i<s.size(); i++) {
-        for(int j=0; j<26; j++) {
-            if(s[i]==s2[j]) {
-                result++;
-                char c = 'A'+(s2[j]-'a');
-                for(int k=0; k<26; k++) {
-                    if(c==s3[k]) s3[k] = '0';
-                }
-                s2[j] = '0';
-            }
-            else if(s[i]==s3[j]) {
-                result++;
-                char c2 = 'a'+(s3[j]-'A');
-                for(int k=0; k<26; k++) {
-                    if(c2==s2[k]) s2[k] = '0';
-                }
-                s3[j] = '0';
-            }
+    char c = 'A';
+
+    for(int i=0; i<n; i++) {
+        s[i] = toupper(s[i]);
+    }
+
+    int k = 0, j = 0;
+
+    while(k<n) {
+        if(s[j]==c) {
+            result++;
+            c++;
+        }
+        j++;
+        if(j==n) {
+            k++;
+            j=0;
         }
     }
 
