@@ -21,19 +21,22 @@ int main() {
 
     int k = 0, j = 0;
 
-    while(k<n) {
-        if(s[j]==c) {
-            result++;
-            c++;
+    if(n>= 26) {
+        while(k<n) {
+            if(s[j]==c) {
+                result++;
+                c++;
+            }
+            j++;
+            if(j==n) {
+                k++;
+                j=0;
+            }
         }
-        j++;
-        if(j==n) {
-            k++;
-            j=0;
-        }
+        if(result==26) cout << "YES\n";
+        else cout << "NO\n";
     }
 
-    if(result==26) cout << "YES\n";
     else cout << "NO\n";
 
     return 0;
