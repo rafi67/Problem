@@ -3,8 +3,7 @@
 using namespace std;
 
 int main() {
-
-    string time;
+    
     int h, m;
 
     while(scanf("%d:%d", &h, &m)!=EOF) {
